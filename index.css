@@ -1,0 +1,296 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: sans-serif;
+background-color: white;
+}
+
+.sidebar {
+margin: 0;
+padding: 0;
+width: 200px;
+background-color: #d9d9d9;
+position: fixed;
+height: 100%;
+overflow: auto;
+}
+
+.sidebar #resto-logo{
+    width: 180px;
+    padding: 10px;
+}
+
+.sidebar a.nav-buttons {
+display: block;
+color: #cf2d6e;
+padding: 16px;
+text-decoration: none;
+text-align: center;
+transition: 0.1s;
+}
+
+.sidebar a.nav-buttons:hover {
+background-color: #555;
+color: white;
+transition: 0.1s;
+}
+
+#my-bag-nav {
+    font-weight: 600;
+}
+
+#my-bag-nav:hover {
+    background-color: #d63e7b;
+}
+
+#main-menu {
+    margin-left: 200px;
+    /* padding: 1px 16px; */
+}
+
+#main-menu h1 {
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+    font-size: 54px;
+    font-family: 'Garamond', sans-serif;
+    color: #cf2d6e;
+    text-shadow: 2px 2px 10px  #fff, -2px -2px 10px  #fff, 2px -2px 10px  #fff, -2px 2px 10px  #fff;
+    background-image: url("./assets/img/header-bg.jpg");
+    line-height: 100px;
+}
+
+.menu-section {
+    padding: 15px;
+}
+
+.menu-section h2 {
+    padding: 10px;
+    font-size: 40px;
+    font-family: 'Garamond', sans-serif;
+    color: #555;
+    border-bottom: 2px solid #cf2d6e;
+}
+
+.menu-item-container {
+    display: inline-flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu-item {
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.menu-item img {
+    width: 200px;
+}
+
+.menu-item p.product-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+.menu-item p.product-price {
+    font-size: 16px;
+    font-weight: 800;
+    color:#cf2d6e;
+}
+
+.menu-item p.product-desc {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.product-quantity {
+    width: 40px;
+} 
+
+.add-to-bag {
+    margin: 5px;
+}
+
+#overlay-section {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #0000007f;
+    transition: 0.1s;
+}
+
+#cart-container {
+    background-color: #f5f5f5;
+    height: 80vh;
+    overflow: auto;
+    margin: 25px 25px 25px 25px;
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 10px;
+}
+
+
+#open-button {
+    position: fixed;
+    height: 100px;
+    bottom: 4%;
+    right: 4%;
+    z-index: 15;
+    transition: 0.2s;
+}
+
+#open-button:hover {
+    height: 120px;
+    bottom: 3%;
+    right: 3%;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#close-button {
+    position: absolute;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+}
+#close-button{
+    cursor: pointer;
+}
+#my-bag h2 {
+    font-size: 28px;
+    font-family: Garamond, sans-serif;
+    color:#555;
+    border-bottom: 2px solid #cf2d6e;
+    width: 100%;
+}
+
+#empty {
+    display: block;
+    margin: 0 auto;
+    color: #cf2d6e;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#empty:hover {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+#total {
+    border-top: 2px solid #555;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: 100px;
+      position: fixed;
+      text-align: center;
+      padding-top: 0px;
+      top: 0px;
+      z-index: 10;
+    }
+    .sidebar a.nav-buttons {
+        display: inline-block;
+        line-height: 8px;
+    }
+    #main-menu {
+        margin-left: 0px;
+        position: relative;
+        top: 100px;
+    }
+    #main-menu h1 {
+        font-size: 42px;
+    }
+    .sidebar .logo-container{
+        margin: auto;
+        float: left;
+        width: 100%;
+        text-align: center;
+        height: 60px;
+    }
+    .sidebar #resto-logo{
+        width: 100px;
+    }
+
+    .menu-section h2 {
+        font-size: 32px;
+    }
+
+    .menu-item {
+        width: 125px;
+        padding: 10px;
+    }
+    .menu-item img {
+        width: 125px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+  }
+  
+  @media screen and (max-width: 480px) {
+    .sidebar a.nav-buttons {
+      text-align: center;
+    }
+
+    .menu-item {
+        width: 100%;
+        padding: 20px;
+        margin: 0px;
+        box-shadow: none;
+    }
+    #my-bag-nav {
+        display: none;
+    }
+
+    #open-button {
+        bottom: 2%;
+        right: 2%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    .sidebar {
+        height: 55px;
+    }
+    .sidebar a.nav-buttons{
+        display: none;
+    }
+    .sidebar .logo-container{
+        height: 50px;
+    }
+
+    .sidebar #resto-logo{
+        height: 50px;
+        width: auto;
+        padding: 0px;
+    }
+
+    #main-menu {
+        top: 50px;
+    }
+}

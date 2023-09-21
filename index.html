@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="#"
+        ><span class="logo-container">
+          <img id="resto-logo" src="./assets/img/eatsy-logo.png" />
+        </span>
+      </a>
+      <a class="nav-buttons" href="#pizza">Pizza</a>
+      <a class="nav-buttons" href="#burger">Burger</a>
+      <a class="nav-buttons" href="#beverage">Beverage</a>
+      <a class="nav-buttons" href="#dessert">Dessert</a>
+      <a
+        class="nav-buttons"
+        href="javascript:void(0);"
+        id="my-bag-nav"
+        onclick="openOverlay()"
+        >My Bag</a
+      >
+    </div>
+    <div id="main-menu">
+      <h1>Our Menu</h1>
+      <div class="menu-section" id="pizza">
+        <h2>Pizza</h2>
+        <div class="menu-item-container" id="pizza-container">
+          <script>
+            displayProducts(pizzaProducts, "pizza-container");
+          </script>
+        </div>
+      </div>
+      <div class="menu-section" id="burger">
+        <h2>Burger</h2>
+        <div class="menu-item-container" id="burger-container">
+          <script>
+            displayProducts(burgerProducts, "burger-container");
+          </script>
+        </div>
+      </div>
+      <div class="menu-section" id="beverage">
+        <h2>Beverage</h2>
+        <div class="menu-item-container" id="beverage-container">
+          <script>
+            displayProducts(beverageProducts, "beverage-container");
+          </script>
+        </div>
+      </div>
+      <div class="menu-section" id="dessert">
+        <h2>Dessert</h2>
+        <div class="menu-item-container" id="dessert-container">
+          <script>
+            displayProducts(dessertProducts, "dessert-container");
+          </script>
+        </div>
+      </div>
+    </div>
+    <a onclick="openOverlay()"
+      ><img id="open-button" src="./assets/img/food-parcel.png"
+    /></a>
+    <div id="overlay-section">
+      <div id="cart-container">
+        <a onclick="closeOverlay()"
+          ><img id="close-button" src="./assets/img/close-button.png"
+        /></a>
+        <div id="my-bag">
+          <h2>My Bag</h2>
+
+          <table cellpadding="10" cellspacing="1">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th width="20%">Unit Price</th>
+                <th width="5%">Quantity</th>
+                <th width="20%">Sub Total</th>
+              </tr>
+            </thead>
+
+            <!--  Cart table to load data on "add to cart" action -->
+            <tbody id="cartTableBody"></tbody>
+
+            <tfoot id="total">
+              <tr>
+                <td colspan="2">Total:</td>
+                <td id="itemCount"></td>
+                <td id="totalAmount"></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <button id="empty" onClick="emptyCart()">Empty Bag</button>
+
+          <script>
+            showCartTable();
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
